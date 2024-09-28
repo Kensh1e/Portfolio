@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Agrandir+Wide:wght@400&display=swap" rel="stylesheet"/>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        section {
+            scroll-margin-top: 80px; 
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .social-icons i {
+            transition: transform 0.3s;
+            font-size: 1.5rem;
+        }
+        .social-icons i:hover {
+            transform: scale(1.2);
+        }
+        header {
+            background-color: #633794; 
+        }
+        .projects-container {
+            display: flex;
+            justify-content: center;
+            overflow-x: auto;
+            gap: 1rem;
+            padding-bottom: 1rem;
+        }
+        .card {
+            background: #2d3748; 
+            border-radius: 10px;
+            padding: 20px;
+            border: 2px solid #F6E05E; 
+            transition: transform 0.3s, border-color 0.3s;
+            width: 300px; 
+            flex-shrink: 0;
+            text-align: center;
+        }
+        .card img {
+            width: 100%; 
+            height: 250px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            border-color: #D69E2E;
+        }
+        .skill-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+        .skill {
+            background-color: #4c51bf;
+            color: white;
+            border-radius: 10px;
+            padding: 1rem;
+            margin: 0 1rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            flex: 1;
+            transition: transform 0.3s;
+        }
+        .skill:hover {
+            transform: translateY(-5px);
+        }
+        .home-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 0;
+            position: relative;
+        }
+        .profile-image {
+            width: 320px;
+            height: 350px;
+            box-shadow: 0 0px 20px rgba(5, 5, 5, 5);
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-30%);
+            z-index: 10;
+        }
+        .purple-line {
+            border-left: 450px solid #9f7aea; 
+            height: 100%;
+            position: absolute;
+            right: 0;
+            top: 0;
+            z-index: 5;
+        }
+        .hire-me-btn {
+            background-color: #92498e;
+            color: white;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 10px;
+            margin-top: 50px;
+            transition: background-color 0.3s;
+        }
+        .hire-me-btn:hover {
+            background-color: #B7791F;
+        }
+        .explore-btn {
+            background-color: #834680;
+            color: white;
+            padding: 13px 25px;
+            border-radius: 10px;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.3s;
+            display: inline-block;
+            margin-top: 20px;
+            margin-left: 5%;
+        }
+        .explore-btn:hover {
+            background-color: #B7791F;
+            transform: scale(1.05);
+        }
+        #contact {
+            padding: 10px;
+            color: white;
+            position: relative;
+        }
+        #contact::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(85, 60, 88, 0.699);
+            z-index: 1;
+        }
+        #contact .content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .home-text {
+            margin-left: 10%; 
+            text-align: left; 
+        }
+
+        .logout-btn {
+            background-color: #E53E3E; /* Original color */
+            transition: transform 0.3s, background-color 0.3s;
+        }
+        .logout-btn:hover {
+            background-color: #C53030; /* Darker shade on hover */
+            transform: translateY(-3px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        
+
+        
+    </style>
+</head>
+<body class="bg-gray-900 text-white relative">
+<header class="flex justify-between items-center p-10 fixed w-full top-0 bg-gray-900 z-20">
+        <div class="absolute bottom-0 right-0 p-6">
+            <img src="R.png" alt="Logo" class="h-16">
+        </div>
+        <nav class="flex space-x-6">
+            <a style="color: #c57bbb;" onMouseOver="this.style.color='white';" onMouseOut="this.style.color='#c57bbb';" href="#home">HOME</a>
+            <a style="color: #c57bbb;" onMouseOver="this.style.color='white';" onMouseOut="this.style.color='#c57bbb';" href="#about">ABOUT</a>
+            <a style="color: #c57bbb;" onMouseOver="this.style.color='white';" onMouseOut="this.style.color='#c57bbb';" href="#projects">PROJECTS</a>
+            <a style="color: #c57bbb;" onMouseOver="this.style.color='white';" onMouseOut="this.style.color='#c57bbb';" href="#contact">CONTACT</a>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="text-center p-10 mt-20 relative">
+        <div class="home-content">
+            <div class="home-text"><br><br><br><br><br><br><br>
+            <h1 class="text-center text-4xl font-bold text-pink-500" style="font-family: 'Arial', sans-serif;">Hello Everyone,</h1>
+<h1 class="text-center text-7xl font-bold text-purple-500" style="font-family: 'Agrandir Wide', sans-serif;">I'm Kenshie <br> C. Maling</h1>
+<br><br><br>
+
+            </div>
+            <div class="flex justify-center mt-10">
+                <img alt="Profile picture of Kenshie C. Maling" class="rounded-full profile-image" src="Capture.PNG" />
+            </div>
+        </div>
+        <br><br>
+        <a href="#skills" class="explore-btn">Explore my works <br><i class="fas fa-arrow-down"></i></a>
+        <div class="purple-line"></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="p-10 bg-gray-800 text-center">
+        <h2 class="text-3xl font-bold text-purple-500">About Me</h2>
+        <div class="flex items-center mt-6 justify-center">
+            <img alt="Profile picture of Kenshie C. Maling" class="rounded-full w-50 h-50" src="Screenshot 2024-09-09 005009.png" />
+            <div class="ml-6">
+                <p class="text-lg text-gray-300">I’m Kenshie C. Maling, 20 years old, an IT student currently studying in Davao del Norte State College with a passion for technology and arts...</p>
+                <br><br><a href="#contact" class="hire-me-btn">Hire Me</a>
+            </div>
+        </div>
+        <h3 id="skills" class="text-2xl font-bold mt-8 text-purple-500">Personal Skills</h3>
+        <div class="skill-container">
+            <div class="skill">Animation<br /><span class="text-sm">Expert</span></div>
+            <div class="skill">Digital Art<br /><span class="text-sm">Expert</span></div>
+            <div class="skill">Film Direction<br /><span class="text-sm">Intermediate</span></div>
+            <div class="skill">Video Editing<br /><span class="text-sm">Intermediate</span></div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="p-10 text-center">
+        <br><br><br><br>
+        <h2 class="text-3xl font-bold text-purple-500">My Projects</h2>
+        <br><br>
+        <div class="projects-container">
+            <div class="card">
+                <img alt="Project 1" class="rounded" src="ror.jpg" />
+                <p class="mt-2"> Short Film</p>
+            </div>
+            <div class="card">
+                <img alt="Project 2" class="rounded" src="sun.jpg" />
+                <p class="mt-2">Digital Poster Art</p>
+            </div>
+            <div class="card">
+                <img alt="Project 3" class="rounded" src="kkk.jpg" />
+                <p class="mt-2">Digital Art</p>
+            </div>
+            <div class="card">
+                <img alt="Project 4" class="rounded" src="synfig.png" />
+                <p class="mt-2">Animation</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="p-10 text-center">
+        <div class="content">
+            <br><br><br>
+            <h2 class="text-3xl font-bold text-purple-500">Feel free to contact me if you are interested!</h2><br>
+            <p class="mt-4 text-gray-300">If you find my work interesting, you can reach me by clicking one of the contact links below.<br>I am budget-friendly. Feel free to reach out to me on my social media channels.<br><br><br></p>
+            <div class="flex justify-center space-x-6 mt-4 social-icons">
+                <br>
+                <a href="https://www.facebook.com/kenhie.maling" target="_blank" aria-label="Facebook">
+                    <i class="fab fa-facebook-f text-white hover:text-blue-500"></i>
+                </a>
+                <a href="https://x.com/CallmeKaiii_" target="_blank" aria-label="Twitter">
+                    <i class="fab fa-twitter text-white hover:text-blue-400"></i>
+                </a>
+                <a href="https://www.youtube.com/@kensh1e4" target="_blank" aria-label="YouTube">
+                    <i class="fab fa-youtube text-white hover:text-red-500"></i>
+                </a>
+                <a href="https://www.instagram.com/kuroinori.y/" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram text-white hover:text-pink-400"></i>
+                </a>
+                <br><br><br><br><br><br>
+                <!-- Logout Button -->
+                <form method="POST" action="http://localhost/ACTIVITY_7/LOG%20IN/log.php" class="absolute top-2 right-2">
+                    <button type="submit" class="logout-btn text-white font-bold py-2 px-4 rounded">
+                        Logout
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
